@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+      function subscribe() {
+        var email = prompt("What is your email?", "????");
+
+        $.post({
+          type: "POST",
+          url: "email",
+          data: email,
+          contentType: "application/text; charset=utf-8",
+          dataType: "json"
+        }).done(function(data) {
+          alert(data);
+        }).fail(function(data) {
+          alert("POST failed");
+        });
+      }
+    </script>
+  </head>
+      
+  <body>
+    <h1>Welcome To My Data</h1>
+
+      <h1>Browse</h1>
+      <a href="browse.html">browse.html</a>  
+      
+      <h1>Donate</h1>
+      <a href="donate.html?from=A" style="color: #0000ff">donate.html</a> 
+      
+      <h1>Subscribe</h1>
+          <button onclick="subscribe()">Subscribe</button>
+             
+      <h2>Bar Plot of Every Marvel Movies and its Budget</h2>
+          <img src="budget.svg">
+      
+      <h2>Scatter Plot of North America Revunue vs Other Territories Revenue for Every Marvel Movie</h2>
+          <img src="revenue.svg">
+          <img src="revenue.svg?cmap=total">
+      
+  </body>
+</html>

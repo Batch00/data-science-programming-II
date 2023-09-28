@@ -1,0 +1,4 @@
+user@example.com
+user123@gmail.com
+carson@gmail.com
+sas@fm.asl
